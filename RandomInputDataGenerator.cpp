@@ -20,6 +20,7 @@ void RandomInputDataGenerator::Generator()
     for (int index = 0; index < length; index++)
     {
         int ran_data = rand() % 2000000 - 20000 ;
+        cout << ran_data << endl;
         file << ran_data << '\n';
     }
     file.close();

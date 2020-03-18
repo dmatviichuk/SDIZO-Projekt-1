@@ -74,7 +74,7 @@ void Test::testArray() {
                 return;
 
             case 1:
-                cout << "Rozpoczynam test...";
+                cout << "Rozpoczynam test..." << endl;
                 while (inputFile.good()) {
                     //Wczytaj wartość z pliku
                     inputFile >> value;
@@ -83,6 +83,7 @@ void Test::testArray() {
                     array.addBeggining(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -92,7 +93,7 @@ void Test::testArray() {
                 break;
 
             case 2:
-                cout << "Rozpoczynam test...";
+                cout << "Rozpoczynam test..." << endl;
 
                 while (inputFile.good()) {
                     //Wczytaj wartość z pliku
@@ -102,6 +103,7 @@ void Test::testArray() {
                     array.addEnd(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -111,7 +113,7 @@ void Test::testArray() {
                 break;
 
             case 3:
-                cout << "Rozpoczynam test...";
+                cout << "Rozpoczynam test..." << endl;
 
                 while (inputFile.good()) {
                     //Wczytaj wartość z pliku
@@ -121,6 +123,7 @@ void Test::testArray() {
                     array.addAnywhere(value, rand() % array.sizeArray);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -130,7 +133,7 @@ void Test::testArray() {
                 break;
 
             case 4:
-                cout << "Rozpoczynam test...";
+                cout << "Rozpoczynam test..." << endl;
 
                 //Wypełnij tablicę wartościami
                 while (inputFile.good()) {
@@ -143,6 +146,7 @@ void Test::testArray() {
                     array.deleteFirst();
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -163,6 +167,7 @@ void Test::testArray() {
                     array.deleteLast();
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -183,6 +188,7 @@ void Test::testArray() {
                     array.deleteAny(rand() % array.sizeArray);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -204,6 +210,7 @@ void Test::testArray() {
                     array.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -296,6 +303,7 @@ void Test::testDoublyLinkedList() {
                     list.addBeggining(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -313,6 +321,7 @@ void Test::testDoublyLinkedList() {
                     list.addEnd(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -336,6 +345,7 @@ void Test::testDoublyLinkedList() {
                         time.TimeEnd();
                     }
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -356,6 +366,7 @@ void Test::testDoublyLinkedList() {
                     list.deleteFirst();
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -376,6 +387,7 @@ void Test::testDoublyLinkedList() {
                     list.deleteLast();
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -396,6 +408,7 @@ void Test::testDoublyLinkedList() {
                     list.deleteAny(rand() % list.size);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -417,6 +430,7 @@ void Test::testDoublyLinkedList() {
                     list.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -502,6 +516,7 @@ void Test::testHeap() {
                     heap.add(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -520,6 +535,7 @@ void Test::testHeap() {
                     heap.del(value);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -541,6 +557,7 @@ void Test::testHeap() {
                     heap.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
                     //Zapisz do pliku wynik pomiaru
+                    cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
 
@@ -559,135 +576,3 @@ void Test::testHeap() {
 
     }
 }
-/*
-void Test::testBinarySearchTree() {
-    srand(time(NULL));
-    Time time;
-    BinarySearchTree tree;
-    int input = 99;
-    int value;
-    string outputData;
-    string inputData;
-    ofstream outputFile;
-    ifstream inputFile;
-
-    while (input != 0) {
-        cout << "Wybierz funkcję Drzewa:" << endl;
-        cout << "    1. Dodaj" << endl;
-        cout << "    2. Usuń" << endl;
-        cout << "    3. Wyszukaj" << endl;
-        cout << "    4. Wydrukuj drzewo" << endl;
-        cout << "    0. Wyjście" << endl << endl;
-        cout << "Wybór: ";
-        cin >> input;
-
-        //Zamknij, jeżeli wybrano 0
-        if (input == 0) return;
-
-        cout << "Plik zawierający dane wejściowe: ";
-        cin >> inputData;
-        cout << "Plik z wynikami testu: ";
-        cin >> outputData;
-
-
-        //Otwórz pliki
-        inputFile.open("/home/asus/CLionProjects/SDIZO-Projekt-1/InputData/" + inputData);
-        outputFile.open("/home/asus/CLionProjects/SDIZO-Projekt-1/OutputData/BinarySearchTree/" + outputData, fstream::out);
-        //Sprawdż czy plik jest otwarty poprawnie
-        if (inputFile.is_open()) {
-            cout << "Otwarto plik " << inputData << endl;
-        } else {
-            cout << "Nie udało się otworzyć pliku wejściowego!" << endl;
-            return;
-        }
-
-        if (outputFile.is_open()) {
-            cout << "Otwarto plik " << outputData << endl;
-        } else {
-            cout << "Nie udało się otworzyć pliku wyjściowego!" << endl;
-            return;
-        }
-
-        switch (input) {
-            default:
-                cout << "Błędny wybór!" << endl;
-                break;
-
-            case 0:
-                break;
-
-            case 1:
-                while (inputFile.good()) {
-                    //Wczytaj wartość z pliku
-                    inputFile >> value;
-                    //Wykonaj funkcję z pomiarem
-                    time.TimeStart();
-                    tree.dodaj(value);
-                    time.TimeEnd();
-                    //Zapisz do pliku wynik pomiaru
-                    outputFile << time.TimeExecution() << endl;
-                }
-
-                //Zamknij oba pliki
-                inputFile.close();
-                outputFile.close();
-                break;
-
-            case 2:
-                //Wypełnij tablicę wartościami
-                while (inputFile.good()) {
-                    inputFile >> value;
-                    tree.dodaj(value);
-                }
-
-
-                while (inputFile.good()) {
-                    inputFile >> value;
-                    //Wykonaj funkcję z pomiarem
-                    time.TimeStart();
-                    tree.usun(value);
-                    time.TimeEnd();
-                    //Zapisz do pliku wynik pomiaru
-                    outputFile << time.TimeExecution() << endl;
-                }
-
-                //Zamknij oba pliki
-                inputFile.close();
-                outputFile.close();
-                break;
-
-            case 3:
-                //Wypełnij tablicę wartościami
-                while (inputFile.good()) {
-                    inputFile >> value;
-                    tree.dodaj(value);
-                }
-
-                for (int i = 0; i < tree.size; i++) {
-                    //Wykonaj funkcję z pomiarem
-                    time.TimeStart();
-                    tree.checkExists(rand() % 2000000 - 1000000);
-                    time.TimeEnd();
-                    //Zapisz do pliku wynik pomiaru
-                    outputFile << time.TimeExecution() << endl;
-                }
-
-                //Zamknij oba pliki
-
-                inputFile.close();
-                outputFile.close();
-                break;
-
-
-            case 4:
-                time.TimeStart();
-                cout << "NIE DZIAŁA" << endl;
-                time.TimeEnd();
-                cout << "Czas wykonania: " << time.TimeExecution() << "ms" << endl;
-                break;
-
-        }
-
-    }
-}
-*/
