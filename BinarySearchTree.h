@@ -23,7 +23,7 @@ public:
     Node * findValue(Node* node,int value);
     Node * predecessor(Node * p);
     Node * successor(Node * p);
-    Node * min(Node*root);
+    Node * minNode(Node*root);
     Node * maxNode(Node*root);
     Node * deleteValue(int value);
     Node * deleteNode(Node * root);
