@@ -24,15 +24,15 @@ void Test::testArray() {
 
     while (input != 0) {
         cout << "Wybierz funkcję tablicy, żeby zmierzyć czas wykonania operacji:" << endl;
-        cout << "    1. Dodaj na początek tablicy" << endl;
-        cout << "    2. Dodaj na koniec tablicy" << endl;
-        cout << "    3. Dodaj w dowolnym miejscu tablicy" << endl;
-        cout << "    4. Usuń pierwszy element z tablicy" << endl;
-        cout << "    5. Usuń ostatni element z tablicy" << endl;
-        cout << "    6. Usuń dowolny element z tablicy" << endl;
-        cout << "    7. Wyszukaj element" << endl;
-        cout << "    8. Wydrukuj tablicę" << endl;
-        cout << "    0. Wyjście do menu głownego" << endl << endl;
+        cout << "    1. Dodać na początek tablicy" << endl;
+        cout << "    2. Dodać na koniec tablicy" << endl;
+        cout << "    3. Dodać w dowolnym miejscu tablicy" << endl;
+        cout << "    4. Usunąć pierwszy element z tablicy" << endl;
+        cout << "    5. Usunąć ostatni element z tablicy" << endl;
+        cout << "    6. Usunąć dowolny element z tablicy" << endl;
+        cout << "    7. Wyszukać element" << endl;
+        cout << "    8. Wydrukować tablicę" << endl;
+        cout << "    0. Powrót do menu głownego" << endl << endl;
         cout << "Wybór: ";
         cin >> input;
 
@@ -80,7 +80,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.addBeggining(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -100,7 +100,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.addEnd(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -120,7 +120,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.addAnywhere(value, rand() % array.sizeArray);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -133,7 +133,7 @@ void Test::testArray() {
             case 4:
                 cout << "Początek testu:" << endl;
 
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     array.addBeggining(value);
@@ -143,7 +143,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.deleteFirst();
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -154,7 +154,7 @@ void Test::testArray() {
                 break;
 
             case 5:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     array.addBeggining(value);
@@ -164,7 +164,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.deleteLast();
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -175,7 +175,7 @@ void Test::testArray() {
                 break;
 
             case 6:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     array.addBeggining(value);
@@ -185,7 +185,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.deleteAny(rand() % array.sizeArray);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -196,7 +196,7 @@ void Test::testArray() {
                 break;
 
             case 7:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     array.addBeggining(value);
@@ -207,7 +207,7 @@ void Test::testArray() {
                     time.TimeStart();
                     array.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -241,15 +241,15 @@ void Test::testDoublyLinkedList() {
 
     while (input != 0) {
         cout << "Wybierz funkcję listy, żeby zmierzyć czas wykonania operacji:" << endl;
-        cout << "    1. Dodaj na początek listy" << endl;
-        cout << "    2. Dodaj na koniec listy" << endl;
-        cout << "    3. Dodaj w dowolnym miejscu listy" << endl;
-        cout << "    4. Usuń pierwszy element z listy" << endl;
-        cout << "    5. Usuń ostatni element z listy" << endl;
-        cout << "    6. Usuń dowolny element z listy" << endl;
-        cout << "    7. Wyszukaj element na liście" << endl;
-        cout << "    8. Wydrukuj listę" << endl;
-        cout << "    0. Wyjście do menu głownego" << endl << endl;
+        cout << "    1. Dodać na początek listy" << endl;
+        cout << "    2. Dodać na koniec listy" << endl;
+        cout << "    3. Dodać w dowolnym miejscu listy" << endl;
+        cout << "    4. Usunąć pierwszy element z listy" << endl;
+        cout << "    5. Usunąć ostatni element z listy" << endl;
+        cout << "    6. Usunąć dowolny element z listy" << endl;
+        cout << "    7. Wyszukać element na liście" << endl;
+        cout << "    8. Wydrukować listę" << endl;
+        cout << "    0. Powrót do menu głownego" << endl << endl;
         cout << "Wybór: ";
         cin >> input;
 
@@ -295,7 +295,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.addBeggining(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -313,7 +313,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.addEnd(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -337,7 +337,7 @@ void Test::testDoublyLinkedList() {
                         list.addAnywhere(value, 1);
                         time.TimeEnd();
                     }
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -348,7 +348,7 @@ void Test::testDoublyLinkedList() {
                 break;
 
             case 4:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     list.addBeggining(value);
@@ -358,7 +358,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.deleteFirst();
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -369,7 +369,7 @@ void Test::testDoublyLinkedList() {
                 break;
 
             case 5:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     list.addBeggining(value);
@@ -379,7 +379,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.deleteLast();
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -390,7 +390,7 @@ void Test::testDoublyLinkedList() {
                 break;
 
             case 6:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     list.addBeggining(value);
@@ -400,7 +400,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.deleteAny(rand() % list.size);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -411,7 +411,7 @@ void Test::testDoublyLinkedList() {
                 break;
 
             case 7:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     list.addBeggining(value);
@@ -422,7 +422,7 @@ void Test::testDoublyLinkedList() {
                     time.TimeStart();
                     list.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -457,12 +457,12 @@ void Test::testHeap() {
 
     while (input != 0) {
         cout << "Wybierz funkcję kopca, żeby zmierzyć czas wykonania operacji:" << endl;
-        cout << "    1. Dodaj element do kopca" << endl;
-        cout << "    2. Usuń element z kopca" << endl;
-        cout << "    3. Wyszukaj element" << endl;
-        cout << "    4. Wydrukuj kopiec" << endl;
-        cout << "    5. Wydrukuj drzewo kopca" << endl;
-        cout << "    0. Wyjście do menu głownego" << endl << endl;
+        cout << "    1. Dodać element do kopca" << endl;
+        cout << "    2. Usunąć element z kopca" << endl;
+        cout << "    3. Wyszukać element" << endl;
+        cout << "    4. Wydrukować kopiec" << endl;
+        cout << "    5. Wydrukować drzewo kopca" << endl;
+        cout << "    0. Powrót do menu głownego" << endl << endl;
         cout << "Wybór: ";
         cin >> input;
 
@@ -508,7 +508,7 @@ void Test::testHeap() {
                     time.TimeStart();
                     heap.add(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -527,7 +527,7 @@ void Test::testHeap() {
                     time.TimeStart();
                     heap.del(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -538,7 +538,7 @@ void Test::testHeap() {
                 break;
 
             case 3:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     heap.add(value);
@@ -549,7 +549,7 @@ void Test::testHeap() {
                     time.TimeStart();
                     heap.checkExists(rand() % 2000000 - 1000000);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -592,11 +592,11 @@ void Test::testBST() {
 
     while (input != 0) {
         cout << "Wybierz funkcję BST, żeby zmierzyć czas wykonania operacji:" << endl;
-        cout << "    1. Dodaj element do BST" << endl;
-        cout << "    2. Usuń element z BST" << endl;
-        cout << "    3. Wyszukaj element w BST" << endl;
-        cout << "    4. Wydrukuj BST" << endl;
-        cout << "    0. Wyjście do menu głownego" << endl << endl;
+        cout << "    1. Dodać element do BST" << endl;
+        cout << "    2. Usunąć element z BST" << endl;
+        cout << "    3. Wyszukać element w BST" << endl;
+        cout << "    4. Wydrukować BST" << endl;
+        cout << "    0. Powrót do menu głownego" << endl << endl;
         cout << "Wybór: ";
         cin >> input;
 
@@ -641,7 +641,7 @@ void Test::testBST() {
                     time.TimeStart();
                     binarysearchtree.addValue(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -658,7 +658,7 @@ void Test::testBST() {
                     time.TimeStart();
                     binarysearchtree.deleteValue(value);
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }
@@ -668,7 +668,7 @@ void Test::testBST() {
                 break;
 
             case 3:
-                //Wypełnij tablicę wartościami
+                //Wypełniamy tablicę wartościami
                 while (inputFile.good()) {
                     inputFile >> value;
                     binarysearchtree.findValue(node, value);
@@ -678,7 +678,7 @@ void Test::testBST() {
                     //Funkcja z pomiarem czasu
                     time.TimeStart();
                     time.TimeEnd();
-                    //Zapis do pliku wyniki pomiaru
+                    //Zapisujemy do pliku wyniki pomiaru
                     cout << time.TimeExecution() << " ms" << endl;
                     outputFile << time.TimeExecution() << endl;
                 }

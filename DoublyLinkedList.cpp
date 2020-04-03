@@ -20,7 +20,7 @@ DoublyLinkedList::~DoublyLinkedList() {
 
         //Robimy kolejny element jako aktualny
         currentElement = firstElement->next;
-        //Usuń pierwszy element
+        //Usuwamy pierwszy element
         delete firstElement;
 
         firstElement = currentElement;
@@ -32,7 +32,7 @@ void DoublyLinkedList::addBeggining(int value) {
 
     //Sprawdzamy, czy istnieje pierwszy element
     if (firstElement == NULL) {
-        //Utwórz new element i ustaw go jako element początkowy i końcowy
+         //Tworzymy nowy element i robimy go jako element pierwszy i ostatni
         firstElement = new ElementsDLL(value, NULL, NULL);
         lastElement = firstElement;
 
@@ -46,15 +46,15 @@ void DoublyLinkedList::addBeggining(int value) {
 
     }
 
-    //Zwiększ size listy
+    //Zwiększamy rozmiar listy
     size = size + 1;
 
 }
 
 void DoublyLinkedList::addEnd(int value) {
-    //Sprawdź, czy istnieje element początkowy
+    //Sprawdzamy, czy istnieje pierwszy element
     if (firstElement == NULL) {
-        //Utwórz new element i ustaw go jako element początkowy i końcowy
+         //Tworzymy nowy element i robimy go jako element pierwszy i ostatni
         lastElement = new ElementsDLL(value, NULL, NULL);
         firstElement = lastElement;
 
@@ -66,7 +66,7 @@ void DoublyLinkedList::addEnd(int value) {
         lastElement = new ElementsDLL(value, NULL, currentElement);
         currentElement->next = lastElement;
     }
-    //Zwiększ rozmair listy o 1
+    //Zwiększamy rozmiar listy
     size++;
 }
 
@@ -90,8 +90,8 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
     }
 
     //Sprawdź w której połowie listy znajduje się wybrany element
-    if (position < size / 2) { //liczone od indeksu zerowego
-
+    if (position < size / 2) {
+        //liczone od indeksu zerowego
         //Przypisz za aktualny element pierwszy
         currentElement = firstElement;
 
@@ -113,14 +113,13 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
     }
 
     //Stwórz new element listy z podanymi parametrami
-    ElementsDLL *newElementsDLL = new ElementsDLL(value, currentElement,
-                                                      currentElement->next);
+    ElementsDLL *newElementsDLL = new ElementsDLL(value, currentElement, currentElement->next);
 
     //przypisz new element w odpowiednim miejscu tablicy
     currentElement->next->previous = newElementsDLL;
     currentElement->next = newElementsDLL;
 
-    //Zwiększ size listy
+    //Zwiększamy rozmiar listy
     size = size + 1;
 }
 
@@ -129,7 +128,7 @@ void DoublyLinkedList::deleteFirst() {
     //przypisz drugi element jako aktualny
     currentElement = firstElement->next;
 
-    //Usuń pierwszy element
+    //Usuwamy pierwszy element
     delete firstElement;
 
     //Sprawdź, czy w liście są jeszcze jakieś elementy
@@ -144,7 +143,7 @@ void DoublyLinkedList::deleteFirst() {
         lastElement = NULL;
     }
 
-    //Zmniejsz size listy
+    //Zmniejszamy rozmiar listy
     size--;
 }
 
@@ -167,16 +166,16 @@ void DoublyLinkedList::deleteLast() {
         lastElement = NULL;
     }
 
-    //Zmniejsz size listy
+    //Zmniejszamy rozmiar listy
     size--;
 
 }
 
 void DoublyLinkedList::deleteAny(int position) {
 
-//Sprawdź czy w liście istnieje position podana przez użytkownika
+    //Sprawdzamy czy w liście istnieje pozycja(gdy wpisujemy pozycję, ale mój program robi test automatyczny)
     if (position < 0 || position > size) {
-        cout << "W liście nie istnieje position [" << position << "]" << endl;
+        cout << "W liście nie istnieje[" << position << "] pozycji" << endl;
         return;
     }
     //Sprawdzamy czy pozycja jest pierwsza
@@ -224,7 +223,7 @@ void DoublyLinkedList::deleteAny(int position) {
 
     delete[]newElementsDLL;
 
-    //Zmniejsz size listy
+    //Zmniejszamy rozmiar listy
     size--;
 
 }

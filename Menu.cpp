@@ -17,6 +17,7 @@ int main() {
         cout << "    3. Lista" << endl;
         cout << "    4. Kopiec Binarny" << endl;
         cout << "    5. Binarne drzewo poszukiwań" << endl;
+        cout << "    6. Autor oraz Instukcja" << endl;
         cout << "    0. Wyjście" << endl << endl;
         cout << "Wybór: ";
         cin >> input;
@@ -49,6 +50,11 @@ int main() {
             case 5:
                 cout << "Początek testu binarne drzewa poszukiwań:" << endl;
                 test.testBST();
+                break;
+            case 6:
+                cout << "                        SDIZO-Projekt-1" << endl;
+                cout << "                Autor: Dmytro Matviichuk 240545" << endl;
+                cout << "Instukcja: Proszę wpisać nazwę pliku tekstowgo bez .txt (program to zrobi samodzielnie)" << endl << endl << endl;
                 break;
 
         }

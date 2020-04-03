@@ -64,7 +64,7 @@ void Array::addEnd(int value) {
 void Array::addAnywhere(int value, int position) {
     //Sprawdzamy czy istnieje wybrana pozycja w tablicy, jeżeli nie to nie dodajemy liczbę
     if (position < 0 || position > sizeArray) {
-        cout << "W tablicy nie istnieje position [" << position << "]!" << endl;
+        cout << "W tablicy nie istnieje [" << position << "] pozycji!" << endl;
     } else {
 
         //Zaalokuj pamięć na tablicę większa o jeden element niż poprzednio
@@ -111,10 +111,10 @@ void Array::deleteLast() {
         delete[] PointerOnHead;
          PointerOnHead= newPointerOnHead;
 
-        //Zmniejsz rozmiar tablicy o 1
+        //Zmniejszamy rozmiar tablicy o 1
         sizeArray--;
     } else {
-        cout << "W tablicy nie ma żadnego elementu!" << endl;
+        cout << "W tablicy nie ma elementów!" << endl;
     }
 }
 
@@ -135,10 +135,10 @@ void Array::deleteFirst() {
         delete[] PointerOnHead;
          PointerOnHead= newPointerOnHead;
 
-        //Zmniejsz rozmiar tablicy o 1
+        //Zmniejszamy rozmiar tablicy o 1
         sizeArray--;
     } else {
-        cout << "W tablicy nie ma żadnego elementu!" << endl;
+        cout << "W tablicy nie ma elementów!" << endl;
     }
 
 }
@@ -165,10 +165,10 @@ void Array::deleteAny(int position) {
         delete[] PointerOnHead;
          PointerOnHead= newPointerOnHead;
 
-        //Zmniejsz rozmiar tablicy o 1
+        //Zmniejszamy rozmiar tablicy o 1
         sizeArray--;
     } else {
-        cout << "W tablicy nie istnieje pozycji [" << position << "]!" << endl;
+        cout << "W tablicy nie istnieje [" << position << "] pozycji!" << endl;
     }
 
 
@@ -184,7 +184,7 @@ bool Array::checkExists(int value) {
         }
     }
     //Jeżeli wartość nie wystąpuje w żadnej iteracji tabeli zwróć false
-    cout << "Szukana wartość nie występuje w tablicy" << endl;
+    cout << "Wartość nie występuje w tablicy" << endl;
     return false;
 }
 
