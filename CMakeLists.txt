@@ -25,4 +25,6 @@ add_executable(SDIZO_Projekt_1
         ElementsDLL.cpp
         ElementsDLL.h
         RandomInputDataGenerator.cpp
-        RandomInputDataGenerator.h)
+        RandomInputDataGenerator.h
+        BinarySearchTree.cpp
+        BinarySearchTree.h)

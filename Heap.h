@@ -14,8 +14,9 @@ public:
     void del(int);
     bool checkExists(int);
     void printHeap();
+    void printTreeHeap();
     void improveStructure();
-    int levelNumbers();
+
 };
 
 #endif //SDIZO_PROJEKT_1_HEAP_H

@@ -4,12 +4,11 @@
 #include <iostream>
 
 class Test {
-
 public:
-
     void testArray();
     void testDoublyLinkedList();
     void testHeap();
+    void testBST();
 };
 
 #endif //SDIZO_PROJEKT_1_TEST_H

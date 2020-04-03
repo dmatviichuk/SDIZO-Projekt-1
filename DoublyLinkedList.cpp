@@ -3,7 +3,7 @@
 #include "ElementsDLL.h"
 
 using namespace std;
-
+//Konstruktor
 DoublyLinkedList::DoublyLinkedList() {
 
     DoublyLinkedList::firstElement = NULL;
@@ -12,13 +12,13 @@ DoublyLinkedList::DoublyLinkedList() {
     DoublyLinkedList::size = 0;
 
 }
-
+//Destruktor
 DoublyLinkedList::~DoublyLinkedList() {
 
 
     for (int i = 0; i < DoublyLinkedList::size; i++) {
 
-        //Przypisz kolejny element jako aktualny
+        //Robimy kolejny element jako aktualny
         currentElement = firstElement->next;
         //Usuń pierwszy element
         delete firstElement;
@@ -30,7 +30,7 @@ DoublyLinkedList::~DoublyLinkedList() {
 
 void DoublyLinkedList::addBeggining(int value) {
 
-    //Sprawdź, czy istnieje element początkowy
+    //Sprawdzamy, czy istnieje pierwszy element
     if (firstElement == NULL) {
         //Utwórz new element i ustaw go jako element początkowy i końcowy
         firstElement = new ElementsDLL(value, NULL, NULL);
@@ -66,7 +66,7 @@ void DoublyLinkedList::addEnd(int value) {
         lastElement = new ElementsDLL(value, NULL, currentElement);
         currentElement->next = lastElement;
     }
-    //Zwiększ size listy o 1
+    //Zwiększ rozmair listy o 1
     size++;
 }
 
@@ -77,13 +77,13 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
         cout << "W liście nie istnieje position [" << position << "]" << endl;
         return;
     }
-    //Sprawdź czy wybrana position jest pierwszą
+   //Sprawdzamy czy pozycja jest pierwsza
     if (position == 0) {
         DoublyLinkedList::addBeggining(value);
         return;
     }
 
-    //Sprawdź czy wybrana position jest ostatnią
+    //Sprawdzamy czy pozycja jest ostatnią
     if (position == size - 1) {
         addEnd(value);
         return;
@@ -95,7 +95,7 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
         //Przypisz za aktualny element pierwszy
         currentElement = firstElement;
 
-        //Przesuń wszyskie elementy o jeden dalej
+        //Przesuwamy wszyskie elementy o jeden
         for (int i = 1; i < position - 1; ++i) {
             currentElement = currentElement->next;
         }
@@ -105,7 +105,7 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
         //Przypisz za aktualny element ostatni
         currentElement = lastElement;
 
-        //Przesuń wszystkie elementy o jedną pozycję wstecz
+        //Przesuwamy wszyskie elementy o jeden
         for (int i = 0; i < DoublyLinkedList::size - position - 1; ++i) {
             currentElement = currentElement->previous;
         }
@@ -179,13 +179,13 @@ void DoublyLinkedList::deleteAny(int position) {
         cout << "W liście nie istnieje position [" << position << "]" << endl;
         return;
     }
-    //Sprawdź czy wybrana position jest pierwszą
+    //Sprawdzamy czy pozycja jest pierwsza
     if (position == 0) {
         deleteFirst();
         return;
     }
 
-    //Sprawdź czy wybrana position jest ostatnią
+    //Sprawdzamy czy pozycja jest ostatnią
     if (position == size - 1) {
         deleteLast();
         return;
@@ -197,7 +197,7 @@ void DoublyLinkedList::deleteAny(int position) {
         //Przypisz za aktualny element pierwszy
         currentElement = firstElement;
 
-        //Przesuń wszyskie elementy o jeden dalej
+        //Przesuwamy wszyskie elementy o jeden
         for (int i = 1; i < position - 1; ++i) {
             currentElement = currentElement->next;
         }
@@ -207,7 +207,7 @@ void DoublyLinkedList::deleteAny(int position) {
         //Przypisz za aktualny element ostatni
         currentElement = lastElement;
 
-        //Przesuń wszystkie elementy o jedną pozycję wstecz
+        //Przesuwamy wszyskie elementy o jeden
         for (int i = 0; i < size - position - 1; ++i) {
             currentElement = currentElement->previous;
         }
@@ -215,6 +215,7 @@ void DoublyLinkedList::deleteAny(int position) {
     }
 
     //Stwórz new element listy z podanymi parametrami
+
     ElementsDLL *newElementsDLL = currentElement->next;
 
     //przypisz new element w odpowiednim miejscu tablicy

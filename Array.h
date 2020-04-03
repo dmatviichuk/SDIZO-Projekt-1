@@ -4,10 +4,8 @@
 class Array {
 
 public:
-
     int *PointerOnHead;
     int sizeArray;
-
     Array();
     ~Array();
 
