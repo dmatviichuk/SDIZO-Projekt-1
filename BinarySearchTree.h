@@ -1,8 +1,8 @@
 #ifndef SDIZO_PROJEKT_1_BINARYSEARCHTREE_H
 #define SDIZO_PROJEKT_1_BINARYSEARCHTREE_H
 #include <string>
-
 using namespace std;
+
 struct Node
 {
     int data;

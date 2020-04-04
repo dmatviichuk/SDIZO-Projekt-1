@@ -1,6 +1,5 @@
 #include <chrono>
 #include "Time.h"
-
 using namespace std;
 using namespace std::chrono;
 

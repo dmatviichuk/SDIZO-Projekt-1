@@ -1,8 +1,8 @@
 #include <iostream>
 #include "DoublyLinkedList.h"
 #include "ElementsDLL.h"
-
 using namespace std;
+
 //Konstruktor
 DoublyLinkedList::DoublyLinkedList() {
 
@@ -15,7 +15,6 @@ DoublyLinkedList::DoublyLinkedList() {
 //Destruktor
 DoublyLinkedList::~DoublyLinkedList() {
 
-
     for (int i = 0; i < DoublyLinkedList::size; i++) {
 
         //Robimy kolejny element jako aktualny
@@ -25,7 +24,6 @@ DoublyLinkedList::~DoublyLinkedList() {
 
         firstElement = currentElement;
     }
-
 }
 
 void DoublyLinkedList::addBeggining(int value) {
@@ -37,18 +35,14 @@ void DoublyLinkedList::addBeggining(int value) {
         lastElement = firstElement;
 
     } else {
-        //Ustaw element ktory był pierwszym jako aktualny
+        //Robimy element pierwszy jako aktualny
         currentElement = firstElement;
-        //Zastąp pierwszy element newm
-        //Ustaw jego wartość oraz element kolejny na element aktualny (były pierwszy)
+        //Zamieniamy pierwszy element nowym
         firstElement = new ElementsDLL(value, currentElement, NULL);
         currentElement->previous = firstElement;
-
     }
-
     //Zwiększamy rozmiar listy
     size = size + 1;
-
 }
 
 void DoublyLinkedList::addEnd(int value) {
@@ -61,8 +55,7 @@ void DoublyLinkedList::addEnd(int value) {
     } else {
         //Ustaw element który był ostatnim jako aktualny
         currentElement = lastElement;
-        //Zastąp ostatni element newm
-        //Ustaw jego wartość oraz element previous na element aktualny (były ostatni)
+        //Zamieniamy pierwszy element nowym
         lastElement = new ElementsDLL(value, NULL, currentElement);
         currentElement->next = lastElement;
     }
@@ -71,8 +64,7 @@ void DoublyLinkedList::addEnd(int value) {
 }
 
 void DoublyLinkedList::addAnywhere(int value, int position) {
-
-    //Sprawdź czy w liście istnieje position podana przez użytkownika
+    //Sprawdzamy czy w liście istnieje pozycja
     if (position < 0 || position > size) {
         cout << "W liście nie istnieje position [" << position << "]" << endl;
         return;
@@ -82,58 +74,43 @@ void DoublyLinkedList::addAnywhere(int value, int position) {
         DoublyLinkedList::addBeggining(value);
         return;
     }
-
     //Sprawdzamy czy pozycja jest ostatnią
     if (position == size - 1) {
         addEnd(value);
         return;
     }
-
-    //Sprawdź w której połowie listy znajduje się wybrany element
+    //Sprawdzamy w której połowie listy znajduje się wybrany element
     if (position < size / 2) {
-        //liczone od indeksu zerowego
-        //Przypisz za aktualny element pierwszy
+        //Przepisujemy za aktualny element pierwszy
         currentElement = firstElement;
-
         //Przesuwamy wszyskie elementy o jeden
         for (int i = 1; i < position - 1; ++i) {
             currentElement = currentElement->next;
         }
 
     } else {
-
-        //Przypisz za aktualny element ostatni
+        //Przepisujemy za aktualny element ostatni
         currentElement = lastElement;
-
         //Przesuwamy wszyskie elementy o jeden
         for (int i = 0; i < DoublyLinkedList::size - position - 1; ++i) {
             currentElement = currentElement->previous;
         }
-
     }
-
-    //Stwórz new element listy z podanymi parametrami
+    //Robimy nowyelement listy z parametrami:
     ElementsDLL *newElementsDLL = new ElementsDLL(value, currentElement, currentElement->next);
-
-    //przypisz new element w odpowiednim miejscu tablicy
+    //Przepisujemy new element w odpowiednim miejscu tablicy
     currentElement->next->previous = newElementsDLL;
     currentElement->next = newElementsDLL;
-
     //Zwiększamy rozmiar listy
     size = size + 1;
 }
 
 void DoublyLinkedList::deleteFirst() {
-
-    //przypisz drugi element jako aktualny
+    //Przepisujemy drugi element jako aktualny
     currentElement = firstElement->next;
-
     //Usuwamy pierwszy element
     delete firstElement;
-
-    //Sprawdź, czy w liście są jeszcze jakieś elementy
-    //Jeżeli tak, ustaw aktualny element jako pierwszy
-    //Jeżeli nie, wyzeruj elementy listy
+    //Sprawdzamy, czy w liście są jeszcze jakieś elementy
     if (size > 1) {
         currentElement->previous = NULL;
         firstElement = currentElement;
@@ -142,21 +119,16 @@ void DoublyLinkedList::deleteFirst() {
         firstElement = NULL;
         lastElement = NULL;
     }
-
     //Zmniejszamy rozmiar listy
     size--;
 }
 
 void DoublyLinkedList::deleteLast() {
-
-    //Przypisz przedostani element jako aktualny
+    //Przepisujemy przedostani element jako aktualny
     currentElement = lastElement->previous;
-    //Usuń ostatni element
+    //Usuwamy ostatni element
     delete lastElement;
-
-    //Sprawdź, czy w liście są jeszcze jakieś elementy
-    //Jeżeli tak, ustaw aktualny element jako ostatni
-    //Jeżeli nie, wyzeruj elementy listy
+    //Sprawdzamy, czy w liście są jakieś elementy
     if (size > 1) {
         currentElement->next = NULL;
         lastElement = currentElement;
@@ -165,14 +137,11 @@ void DoublyLinkedList::deleteLast() {
         firstElement = NULL;
         lastElement = NULL;
     }
-
     //Zmniejszamy rozmiar listy
     size--;
-
 }
 
 void DoublyLinkedList::deleteAny(int position) {
-
     //Sprawdzamy czy w liście istnieje pozycja(gdy wpisujemy pozycję, ale mój program robi test automatyczny)
     if (position < 0 || position > size) {
         cout << "W liście nie istnieje[" << position << "] pozycji" << endl;
@@ -183,87 +152,64 @@ void DoublyLinkedList::deleteAny(int position) {
         deleteFirst();
         return;
     }
-
     //Sprawdzamy czy pozycja jest ostatnią
     if (position == size - 1) {
         deleteLast();
         return;
     }
-
-    //Sprawdź w której połowie listy znajduje się wybrany element
+    //Sprawdzamy w której połowie listy znajduje się wybrany element
     if (position < size / 2) {
-
-        //Przypisz za aktualny element pierwszy
+        //Przepisujemy za aktualny element pierwszy
         currentElement = firstElement;
-
         //Przesuwamy wszyskie elementy o jeden
         for (int i = 1; i < position - 1; ++i) {
             currentElement = currentElement->next;
         }
-
     } else {
-
-        //Przypisz za aktualny element ostatni
+        //Przepisujemy za aktualny element ostatni
         currentElement = lastElement;
-
         //Przesuwamy wszyskie elementy o jeden
         for (int i = 0; i < size - position - 1; ++i) {
             currentElement = currentElement->previous;
         }
-
     }
-
     //Stwórz new element listy z podanymi parametrami
-
     ElementsDLL *newElementsDLL = currentElement->next;
-
-    //przypisz new element w odpowiednim miejscu tablicy
+    //Przepisujemy new element w odpowiednim miejscu tablicy
     currentElement->next = newElementsDLL->next;
     currentElement->next->previous = newElementsDLL;
-
     delete[]newElementsDLL;
-
     //Zmniejszamy rozmiar listy
     size--;
-
 }
 
 bool DoublyLinkedList::checkExists(int value) {
-
-    //Jeżeli DoublyLinkedList jest pusta, zwróć false z automatu
+    //Gdy lista jest pusta, zwracamy false
     if (size == 0) {
         return false;
-
     }
-
-    //Przypisa pierwszy element jako aktualny
+    //Robimy pierwszy element jako aktualny
     currentElement = firstElement;
-
-    //Przeszukaj listę pod kątem wartości
     for (int i = 0; i < size; i++) {
         if (currentElement->value == value) {
             cout << "Szukana wartość zajmuje w liście pozycję [" << i << "]" << endl;
             return true;
         }
-
         currentElement = currentElement->next;
     }
-
-    //Jeżeli wartość nie wystąpiła w żadnej iteracji listy zwróć false
+    //Wartość nie wystąpuje > false
     cout << "Szukana wartość nie występuje w liście" << endl;
     return false;
 }
 
 void DoublyLinkedList::printList() {
-
-    //Ustaw jako akutualny element pierwszy element listy
+    //Robimy akutualnym pierwszy element listy
     currentElement = firstElement;
 
     for (int i = 0; i < size; i++) {
 
         cout << "[" << i << "] " << currentElement->value << endl;
-
-        //Przypisz kolejny element listy jako aktualny
+        //Robimy kolejny element listy jak aktualny
         currentElement = currentElement->next;
 
     }

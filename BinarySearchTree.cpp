@@ -1,7 +1,6 @@
 #include "BinarySearchTree.h"
 #include <iostream>
 
-
 Node * BinarySearchTree::getRoot()
 {
     return root;
@@ -36,8 +35,6 @@ Node * BinarySearchTree::findValue(Node * p, int k)
 
     return p;
 }
-
-
 
 Node * BinarySearchTree::predecessor(Node * node)
 {
@@ -94,9 +91,6 @@ Node * BinarySearchTree::maxNode(Node*root)
 
     return root;
 }
-
-
-
 
 void BinarySearchTree::addValue(int value)
 {

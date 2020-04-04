@@ -6,9 +6,7 @@
 #include "DoublyLinkedList.h"
 #include "Heap.h"
 #include "BinarySearchTree.h"
-
 using namespace std;
-
 
 void Test::testArray() {
     srand(time(NULL));
