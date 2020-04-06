@@ -56,7 +56,7 @@ void Array::addAnywhere(int value, int position) {
         newPointerOnHead[position] = value;
 
         //Przepisujemy dane ze starej tablicy do nowej
-        //Przerwij przed wybraną pozycją
+        //Przerwamy(break) przed wybraną pozycją
         for (int i = 0; i < position; i++) {
             newPointerOnHead[i] = PointerOnHead[i];
         }

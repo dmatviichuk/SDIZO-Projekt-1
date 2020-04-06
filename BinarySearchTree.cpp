@@ -1,8 +1,9 @@
 #include "BinarySearchTree.h"
 #include <iostream>
 
-Node * BinarySearchTree::getRoot()
+Node *BinarySearchTree::getRoot()
 {
+    //zwracamy korzen(root)
     return root;
 }
 //Konstruktor
@@ -14,10 +15,9 @@ BinarySearchTree::BinarySearchTree(){
 //Destruktor
 BinarySearchTree::~BinarySearchTree()
 {
-
     delAll(root);
 }
-void BinarySearchTree::delAll(Node* node)
+void BinarySearchTree::delAll(Node *node)
 {
     if (node)
     {
@@ -28,7 +28,7 @@ void BinarySearchTree::delAll(Node* node)
 }
 
 
-Node * BinarySearchTree::findValue(Node * p, int k)
+Node * BinarySearchTree::findValue(Node *p, int k)
 {
     while (p && p->data != k)
         p = (k < p->data) ? p->left : p->right;
@@ -36,28 +36,8 @@ Node * BinarySearchTree::findValue(Node * p, int k)
     return p;
 }
 
-Node * BinarySearchTree::predecessor(Node * node)
-{
-    Node * r;
 
-    if (node)
-    {
-        if (node->left) return maxNode(node->left);
-        else
-        {
-            r = node->up;
-            while (r && (node == r->left))
-            {
-                node = r;
-                r = r->up;
-            }
-            return r;
-        }
-    }
-    return node;
-}
-
-Node * BinarySearchTree::successor(Node * node)
+Node *BinarySearchTree::successor(Node *node)
 {
     Node * r;
 
@@ -78,16 +58,17 @@ Node * BinarySearchTree::successor(Node * node)
     return node;
 }
 
-Node * BinarySearchTree::minNode(Node*root)
+Node * BinarySearchTree::minNode(Node *root)
 {
     if (root) while (root->left) root = root->left;
 
     return root;
 }
 
-Node * BinarySearchTree::maxNode(Node*root)
+Node *BinarySearchTree::maxNode(Node *root)
 {
-    if (root) while (root->right) root = root->right;
+    if(root)
+        while (root->right) root = root->right;
 
     return root;
 }
@@ -96,7 +77,7 @@ void BinarySearchTree::addValue(int value)
 {
     Node *node;
     size++;
-    Node* w = new Node();
+    Node *w = new Node();
 
     w->left = w->right = NULL;
     w->data = value;
@@ -129,18 +110,16 @@ void BinarySearchTree::addValue(int value)
     w->up = node;
 }
 
-Node * BinarySearchTree::deleteValue(int value)
+Node *BinarySearchTree::deleteValue(int value)
 {
     size--;
     return deleteNode(findValue(root,value));
 }
 
 
-
-Node * BinarySearchTree::deleteNode(Node * node)
+Node *BinarySearchTree::deleteNode(Node *node)
 {
-    Node * nodeB, *nodeC;
-
+    Node *nodeB, *nodeC;
     if (node)
     {
         if(!node->left || !node->right)
@@ -166,15 +145,12 @@ Node * BinarySearchTree::deleteNode(Node * node)
         }
         else nodeB->up->right = nodeC;
         if (nodeB != node) node->data = nodeB->data;
-
         delete nodeB;
-
     }
     return node;
 }
 
-
-Node * BinarySearchTree::turnRight(int value)
+Node *BinarySearchTree::turnRight(int value)
 {
     if(findValue(root, value)!=nullptr)
     {
@@ -182,11 +158,9 @@ Node * BinarySearchTree::turnRight(int value)
         return findValue(root, value);
     }
     else return nullptr;
-
-
 }
 
-Node * BinarySearchTree::turnLeft(int value)
+Node *BinarySearchTree::turnLeft(int value)
 {
     if (findValue(root, value) != nullptr)
     {
@@ -196,8 +170,7 @@ Node * BinarySearchTree::turnLeft(int value)
     else return nullptr;
 }
 
-
-void BinarySearchTree::rotateLeft(Node * nodeA)
+void BinarySearchTree::rotateLeft(Node *nodeA)
 {
     Node * nodeB = nodeA->right, *p = nodeA->up;
 
@@ -219,9 +192,9 @@ void BinarySearchTree::rotateLeft(Node * nodeA)
 }
 
 
-void BinarySearchTree::rotateRight(Node * nodeA)
+void BinarySearchTree::rotateRight(Node *nodeA)
 {
-    Node * nodeB = nodeA->left, *p = nodeA->up;
+    Node *nodeB = nodeA->left, *p = nodeA->up;
 
     if (nodeB)
     {
@@ -240,22 +213,21 @@ void BinarySearchTree::rotateRight(Node * nodeA)
     }
 }
 
-void BinarySearchTree::printBST(string sp, string sn, Node * v)
+void BinarySearchTree::printBST(string sp, string sn, Node *v)
 {
-    string s;
-
+    string x;
     if (v)
     {
-        s = sp;
-        if (sn == cr) s[s.length() - 2] = ' ';
-        printBST(s + cp, cr, v->right);
+        x = sp;
+        if (sn == cr) x[x.length() - 2] = ' ';
+        printBST(x + cp, cr, v->right);
 
-        s = s.substr(0, sp.length() - 2);
-        cout << s << sn << v->data << endl;
+        x = x.substr(0, sp.length() - 2);
+        cout << x << sn << v->data << endl;
 
-        s = sp;
-        if (sn == cl) s[s.length() - 2] = ' ';
-        printBST(s + cp, cl, v->left);
+        x = sp;
+        if (sn == cl) x[x.length() - 2] = ' ';
+        printBST(x + cp, cl, v->left);
     }
 }
 

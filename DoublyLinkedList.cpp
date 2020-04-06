@@ -197,7 +197,7 @@ bool DoublyLinkedList::checkExists(int value) {
         }
         currentElement = currentElement->next;
     }
-    //Wartość nie wystąpuje > false
+    //Wartość nie wystąpuje -> false
     cout << "Szukana wartość nie występuje w liście" << endl;
     return false;
 }
@@ -207,7 +207,6 @@ void DoublyLinkedList::printList() {
     currentElement = firstElement;
 
     for (int i = 0; i < size; i++) {
-
         cout << "[" << i << "] " << currentElement->value << endl;
         //Robimy kolejny element listy jak aktualny
         currentElement = currentElement->next;
