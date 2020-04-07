@@ -12,7 +12,7 @@ void RandomInputDataGenerator::Generator()
 
     cout << "Wpisz nazwę pliku(bez .txt): ";
     cin >> nameFile;
-    cout << "Wpisz ilość liczb(bez .txt): ";
+    cout << "Wpisz ilość liczb: ";
     cin >> length;
     file.open("/home/asus/CLionProjects/SDIZO-Projekt-1/InputData/" + nameFile + ".txt", fstream::out);
 
